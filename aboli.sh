@@ -1,11 +1,11 @@
 #!/bin/bash
 
 GITHUB_API_BASEURI="https://api.github.com"
-DEFAULT_BRANCH=trunk
 SHAMEFUL_BRANCH=master
 
 main()
 {
+	check-default-branch
 
 	check-git-template-dir
 	git-template "$GIT_TEMPLATE_DIR"
@@ -47,6 +47,14 @@ check-dependencies()
 		type $exe >/dev/null 2>&1 \
 			|| die "Please install '$exe'." 1
 	done
+}
+
+check-default-branch()
+{
+	if [ -z "$DEFAULT_BRANCH" ]
+	then
+		die "Please define variable DEFAULT_BRANCH containing new main branch name (main, trunk)" 2
+	fi
 }
 
 check-user()

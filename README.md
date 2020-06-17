@@ -16,6 +16,7 @@ export GIT_TEMPLATE_DIR=~/repositories/template.git
 export GIT_HOME_DIR=~/workshop
 export GITHUB_USER=VictorSchoelcher
 export GITHUB_TOKEN=123
+export DEFAULT_BRANCH=trunk
 
 ./aboli.sh
 ```
