@@ -84,7 +84,7 @@ github-call()
 		-H 'Accept: application/vnd.github.v3+json' \
 		-H 'Content-type: application/json' \
 		"$GITHUB_API_BASEURI$path" \
-		"$@" || die "Error on API call"
+		"$@" || die "Error on API call" 4
 }
 
 github-master-no-more()
