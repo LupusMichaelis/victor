@@ -21,7 +21,7 @@ export DEFAULT_BRANCH=trunk
 ./aboli.sh
 ```
 You will need to create a
-[token](visit https://github.com/settings/tokens)
+[token](https://github.com/settings/tokens)
 to clean your GitHub's repos.
 
 # Improvement
