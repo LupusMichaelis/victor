@@ -96,7 +96,7 @@ github-master-no-more()
 		refs=$(github-call \
 			"/repos/$GITHUB_USER/$repo/git/refs")
 
-		sha=$(echo $refs | jq -r '.[]|select(.ref="refs/heads/'$SHAMEFUL_BRANCH'").object.sha')
+		sha=$(echo $refs | jq -r '.[]|select(.ref=="refs/heads/'$SHAMEFUL_BRANCH'")|.object.sha')
 
 
 		github-call \
