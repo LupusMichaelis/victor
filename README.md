@@ -1,6 +1,7 @@
 # A script to replace master branches
 
-On the wake of the BLM movement, i discovered that GitHub's master get its roots from a Master/Slave
+On the wake of the BLM movement, I discovered that GitHub's master get its
+[roots from a Master/Slave](https://mail.gnome.org/archives/desktop-devel-list/2019-May/msg00066.html)
 metaphor. In a effort to remove such indignity, here is a script to clean:
   - local repositories
   - remote GitHub repositories
