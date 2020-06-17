@@ -109,7 +109,7 @@ github-master-no-more()
 			-X PATCH \
 			-d '{ "default_branch": "'$DEFAULT_BRANCH'"}'
 
-		github-call "/repos/$GITHUB_USER/$repo/git/refs/heads/'$SHAMEFUL_BRANCH'" -X DELETE
+		github-call "/repos/$GITHUB_USER/$repo/git/refs/heads/$SHAMEFUL_BRANCH" -X DELETE
 	done
 }
 
