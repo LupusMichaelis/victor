@@ -89,14 +89,14 @@ github-call()
 
 github-master-no-more()
 {
-	repos=$(github-call /users/LupusMichaelis/repos | jq -r '.[] | .name')
+	local repos=$(github-call /users/LupusMichaelis/repos | jq -r '.[] | .name')
 
 	for repo in $repos
 	do
-		refs=$(github-call \
+		local refs=$(github-call \
 			"/repos/$GITHUB_USER/$repo/git/refs")
 
-		sha=$(echo $refs | jq -r '.[]|select(.ref=="refs/heads/'$SHAMEFUL_BRANCH'")|.object.sha')
+		local sha=$(echo $refs | jq -r '.[]|select(.ref=="refs/heads/'$SHAMEFUL_BRANCH'")|.object.sha')
 
 
 		github-call \
@@ -125,7 +125,7 @@ git-template()
 
 git-local-scrub()
 {
-	path=$1
+	local path=$1
 	shift
 
 	for repo in $(ls $path)
