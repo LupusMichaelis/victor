@@ -27,17 +27,13 @@ die()
 
 check-git-template-dir()
 {
-	if [[ -z "$GIT_TEMPLATE_DIR" || ! -d "$GIT_TEMPLATE_DIR" ]]
-	then
-		die "Please define variable GIT_TEMPLATE_DIR to the path where the template Git repos will be hosted" 2
-	fi
+	[[ -z "$GIT_TEMPLATE_DIR" || ! -d "$GIT_TEMPLATE_DIR" ]] \
+		&& die "Please define variable GIT_TEMPLATE_DIR to the path where the template Git repos will be hosted" 2
 }
 check-git-home-dir()
 {
-	if [[ -z "$GIT_HOME_DIR" || ! -d "$GIT_HOME_DIR" ]]
-	then
-		die "Please define variable GIT_HOME_DIR to your local directory hosting your Git repos" 2
-	fi
+	[[ -z "$GIT_HOME_DIR" || ! -d "$GIT_HOME_DIR" ]] \
+		&& die "Please define variable GIT_HOME_DIR to your local directory hosting your Git repos" 2
 }
 
 check-dependencies()
@@ -51,26 +47,20 @@ check-dependencies()
 
 check-default-branch()
 {
-	if [ -z "$DEFAULT_BRANCH" ]
-	then
-		die "Please define variable DEFAULT_BRANCH containing new main branch name (main, trunk)" 2
-	fi
+	[[ -z "$DEFAULT_BRANCH" ]] \
+		&& die "Please define variable DEFAULT_BRANCH containing new main branch name (main, trunk)" 2
 }
 
 check-user()
 {
-	if [ -z "$GITHUB_USER" ]
-	then
-		die "Please define variable GITHUB_USER which corresponds to your GitHub username" 2
-	fi
+	[[ -z "$GITHUB_USER" ]] \
+		&& die "Please define variable GITHUB_USER which corresponds to your GitHub username" 2
 }
 
 check-token()
 {
-	if [ -z "$GITHUB_TOKEN" ]
-	then
-		die "Please define variable GITHUB_TOKEN (visit https://github.com/settings/tokens)" 2
-	fi
+	[[ -z "$GITHUB_TOKEN" ]] \
+		&& die "Please define variable GITHUB_TOKEN (visit https://github.com/settings/tokens)" 2
 }
 
 github-call()
