@@ -120,9 +120,9 @@ git-local-scrub()
 
 	for repo in $(find $path -mindepth 1 -maxdepth 1 -type d)
 	do
-		cd $path/$repo
-		git checkout -b trunk
-		git branch -D master
+		cd $repo
+		git checkout -b $DEFAULT_BRANCH
+		git branch -D $SHAMEFUL_BRANCH
 		cd -
 	done
 }
