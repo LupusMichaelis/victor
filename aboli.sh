@@ -118,7 +118,7 @@ git-local-scrub()
 	local path=$1
 	shift
 
-	for repo in $(ls $path)
+	for repo in $(find $path -mindepth 1 -maxdepth 1 -type d)
 	do
 		cd $path/$repo
 		git checkout -b trunk
